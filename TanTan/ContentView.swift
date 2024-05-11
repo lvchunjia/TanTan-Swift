@@ -8,47 +8,55 @@
 import SwiftUI
 
 struct ContentView: View {
-    var tabs: [TabBarItem] = [
-        TabBarItem(title: "TanTan",icon: "rectangle.fill.on.rectangle.fill"),
-        TabBarItem(title: "Live",icon: "play.tv.fill"),
-        TabBarItem(title: "Message",icon: "message.fill"),
-        TabBarItem(title: "Person",icon: "person.fill"),
-    ]
-    
-    @State var selectedTab: TabBarItem = TabBarItem(title: "TanTan",icon: "rectangle.fill.on.rectangle.fill")
+    @State var selectedTab: TabItem = .home
     
     var body: some View {
         VStack {
+            switch selectedTab {
+            case .home:
+                Text("Home")
+            case .live:
+                Text("Live")
+            case .message:
+                Text("Message")
+            case .profile:
+                Text("Progile")
+            }
+            
             Spacer()
             
             HStack {
-                ForEach (tabs, id: \.self) { tab in
-                    createTabBarItem(tabBarItem: tab)
-                        .onTapGesture {
-                            selectedTab = tab
-                        }
-                }
+                createTabBarItem(tab: .home, title: "Home")
+                createTabBarItem(tab: .live, title: "Live")
+                createTabBarItem(tab: .message, title: "Message")
+                createTabBarItem(tab: .profile, title: "Profile")
+            }
+        }
+    }
+    
+    func createTabBarItem(tab: TabItem, title: String) -> some View {
+        Button {
+            selectedTab = tab
+        } label: {
+            VStack {
+                Image(systemName: tab.rawValue)
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(selectedTab == tab ? .accentColor : Color.gray.opacity(0.5))
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                Text(title)
+                    .font(.system(size: 10))
+                    .foregroundColor(selectedTab == tab ? .accentColor : Color.gray.opacity(0.5))
             }
         }
         
     }
-    
-    func createTabBarItem(tabBarItem: TabBarItem) -> some View {
-        VStack {
-            Image(systemName: tabBarItem.icon)
-                .font(.system(size: 24, weight: .bold))
-                .foregroundColor(selectedTab == tabBarItem ? .accentColor : Color.gray.opacity(0.5))
-                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-            Text(tabBarItem.title)
-                .font(.system(size: 10))
-                .foregroundColor(selectedTab == tabBarItem ? .accentColor : Color.gray.opacity(0.5))
-        }
-    }
 }
 
-struct TabBarItem: Hashable {
-    let title: String
-    let icon: String
+enum TabItem: String {
+    case home = "rectangle.fill.on.rectangle.fill"
+    case live = "play.tv.fill"
+    case message = "message.fill"
+    case profile = "person.fill"
 }
 
 #Preview {
