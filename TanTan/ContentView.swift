@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedTab: TabItem = .home
+    @StateObject var appState = AppState()
     
     var body: some View {
         VStack {
-            switch selectedTab {
+            switch appState.selectedTab {
             case .home:
                 Text("Home")
             case .live:
@@ -23,29 +23,30 @@ struct ContentView: View {
                 Text("Progile")
             }
             
-            Spacer()
-            
-            HStack {
-                createTabBarItem(tab: .home, title: "Home")
-                createTabBarItem(tab: .live, title: "Live")
-                createTabBarItem(tab: .message, title: "Message")
-                createTabBarItem(tab: .profile, title: "Profile")
+            if !appState.isFullScreen {
+                Spacer()
+                HStack {
+                    createTabBarItem(tab: .home, title: "Home")
+                    createTabBarItem(tab: .live, title: "Live")
+                    createTabBarItem(tab: .message, title: "Message")
+                    createTabBarItem(tab: .profile, title: "Profile")
+                }
             }
         }
     }
     
     func createTabBarItem(tab: TabItem, title: String) -> some View {
         Button {
-            selectedTab = tab
+            appState.selectedTab = tab
         } label: {
             VStack {
                 Image(systemName: tab.rawValue)
                     .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(selectedTab == tab ? .accentColor : Color.gray.opacity(0.5))
+                    .foregroundColor(appState.selectedTab == tab ? .accentColor : Color.gray.opacity(0.5))
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 Text(title)
                     .font(.system(size: 10))
-                    .foregroundColor(selectedTab == tab ? .accentColor : Color.gray.opacity(0.5))
+                    .foregroundColor(appState.selectedTab == tab ? .accentColor : Color.gray.opacity(0.5))
             }
         }
         
