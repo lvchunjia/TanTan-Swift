@@ -12,6 +12,10 @@
 		A6763B572BEF4DB400E1669E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6763B562BEF4DB400E1669E /* Assets.xcassets */; };
 		A6763B5A2BEF4DB400E1669E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6763B592BEF4DB400E1669E /* Preview Assets.xcassets */; };
 		A6763B612BEF5BDA00E1669E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B602BEF5BDA00E1669E /* AppState.swift */; };
+		A6763B652BF33EEB00E1669E /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B642BF33EEB00E1669E /* UserCard.swift */; };
+		A6763B672BF33F4A00E1669E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B662BF33F4A00E1669E /* HomeScreen.swift */; };
+		A6763B692BF33F7F00E1669E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B682BF33F7F00E1669E /* HomeViewModel.swift */; };
+		A6763B6B2BF340C500E1669E /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B6A2BF340C500E1669E /* UserCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		A6763B562BEF4DB400E1669E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6763B592BEF4DB400E1669E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A6763B602BEF5BDA00E1669E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A6763B642BF33EEB00E1669E /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		A6763B662BF33F4A00E1669E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		A6763B682BF33F7F00E1669E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A6763B6A2BF340C500E1669E /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 				A6763B602BEF5BDA00E1669E /* AppState.swift */,
 				A6763B562BEF4DB400E1669E /* Assets.xcassets */,
 				A6763B582BEF4DB400E1669E /* Preview Content */,
+				A6763B642BF33EEB00E1669E /* UserCard.swift */,
+				A6763B662BF33F4A00E1669E /* HomeScreen.swift */,
+				A6763B682BF33F7F00E1669E /* HomeViewModel.swift */,
+				A6763B6A2BF340C500E1669E /* UserCardView.swift */,
 			);
 			path = TanTan;
 			sourceTree = "<group>";
@@ -141,8 +153,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6763B612BEF5BDA00E1669E /* AppState.swift in Sources */,
+				A6763B692BF33F7F00E1669E /* HomeViewModel.swift in Sources */,
+				A6763B672BF33F4A00E1669E /* HomeScreen.swift in Sources */,
 				A6763B552BEF4DB300E1669E /* ContentView.swift in Sources */,
+				A6763B652BF33EEB00E1669E /* UserCard.swift in Sources */,
 				A6763B532BEF4DB300E1669E /* TanTanApp.swift in Sources */,
+				A6763B6B2BF340C500E1669E /* UserCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
