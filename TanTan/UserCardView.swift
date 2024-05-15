@@ -24,15 +24,8 @@ struct UserCardView: View {
                 .cornerRadius(20)
             
             HStack {
-                Rectangle()
-                    .onTapGesture {
-                        undateImageIndex(hasMoreImage: false)
-                    }
-                
-                Rectangle()
-                    .onTapGesture {
-                        undateImageIndex(hasMoreImage: true)
-                    }
+                Rectangle().onTapGesture { undateImageIndex(hasMoreImage: false) }
+                Rectangle().onTapGesture { undateImageIndex(hasMoreImage: true) }
             }.foregroundColor(.white.opacity(0.01))
             
             HStack {
@@ -43,26 +36,31 @@ struct UserCardView: View {
                 }
             }.padding(.top, 10).padding(.horizontal)
             
-            HStack {
-                if offset.width > 0 {
-                    createUserCardLabel(title: "LIKE", degree: -20, color: .green)
-                    Spacer()
-                } else if offset.width < 0 {
-                    Spacer()
-                    createUserCardLabel(title: "NOPE", degree: 20, color: .red)
-                }
-            }.padding(.horizontal, 30).padding(.top, 40)
+            VStack {
+                HStack {
+                    if offset.width > 0 {
+                        createUserCardLabel(title: "LIKE", degree: -20, color: .green)
+                        Spacer()
+                    } else if offset.width < 0 {
+                        Spacer()
+                        createUserCardLabel(title: "NOPE", degree: 20, color: .red)
+                    }
+                }.padding(.horizontal, 30).padding(.top, 40)
+                
+                Spacer()
+                createUserCardBottomInfo()
+            }
         }
         .offset(offset)
         .scaleEffect(getScaleAmount())
         .rotationEffect(Angle(degrees: getRotateAmount()))
         .gesture(
             DragGesture().onChanged({ value in
-                withAnimation(.spring()) {
+                withAnimation(.easeOut(duration: 0.2)) {
                     offset = value.translation
                 }
             }).onEnded { value in
-                withAnimation(.spring()) {
+                withAnimation(.easeOut(duration: 0.2)) {
                     offset = .zero
                 }
             }
@@ -90,6 +88,7 @@ struct UserCardView: View {
     
     func createUserCardLabel(title: String, degree: Double, color: Color) -> some View {
         Text(title)
+            .tracking(3)
             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             .fontWeight(.bold)
             .padding(.horizontal)
@@ -99,10 +98,41 @@ struct UserCardView: View {
             )
             .rotationEffect(.degrees(degree))
     }
+    
+    func createUserCardBottomInfo() -> some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 5) {
+                Text("\(userCard.name)，\(userCard.age)")
+                    .font(.system(size: 30))
+                    .fontWeight(.heavy)
+                HStack {
+                    Text(userCard.zodiac)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .padding(5)
+                        .background(.white.opacity(0.3))
+                        .cornerRadius(5)
+                    Text(userCard.place)
+                }
+            }
+            Spacer()
+            Button {
+                
+            } label: {
+                Image(systemName: "info.circle.fill")
+                    .font(.system(size: 30))
+                    .padding(8)
+            }
+        }
+        .foregroundColor(.white)
+        .padding()
+        .background(LinearGradient(colors: [.black.opacity(0.9), .clear], startPoint: .bottom, endPoint: .top))
+        .cornerRadius(20)
+        .clipped()
+    }
 }
 
 #Preview {
-    UserCardView(userCard: UserCard(
-            name: "Natalia", age: 22, place: "Vadalia NYC", zodiac: "Cancer", photos: ["User1", "User2"]
-    ))
+    UserCardView(
+        userCard: UserCard(name: "Natalia", age: 22, place: "Vadalia NYC", zodiac: "Cancer", photos: ["User1", "User2"])
+    )
 }
