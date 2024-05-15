@@ -19,6 +19,7 @@
 		A6763B872BF4560F00E1669E /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B862BF4560F00E1669E /* RoundButton.swift */; };
 		A6763B892BF45A9700E1669E /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B882BF45A9700E1669E /* CardContainerView.swift */; };
 		A6763B8B2BF4602900E1669E /* NoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B8A2BF4602900E1669E /* NoResultView.swift */; };
+		A6763B932BF4820300E1669E /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B922BF4820300E1669E /* CardDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A6763B862BF4560F00E1669E /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		A6763B882BF45A9700E1669E /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
 		A6763B8A2BF4602900E1669E /* NoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultView.swift; sourceTree = "<group>"; };
+		A6763B922BF4820300E1669E /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				A6763B6A2BF340C500E1669E /* UserCardView.swift */,
 				A6763B8A2BF4602900E1669E /* NoResultView.swift */,
 				A6763B882BF45A9700E1669E /* CardContainerView.swift */,
+				A6763B922BF4820300E1669E /* CardDetailView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				A6763B652BF33EEB00E1669E /* UserCard.swift in Sources */,
 				A6763B532BEF4DB300E1669E /* TanTanApp.swift in Sources */,
 				A6763B6B2BF340C500E1669E /* UserCardView.swift in Sources */,
+				A6763B932BF4820300E1669E /* CardDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
