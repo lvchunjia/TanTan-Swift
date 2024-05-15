@@ -10,6 +10,10 @@ import Foundation
 class HomeViewModel: ObservableObject {
     @Published var displayingCard: [UserCard]
     
+    var hasMoreCard: Bool {
+        !displayingCard.isEmpty
+    }
+    
     init() {
         self.displayingCard = [
             UserCard(name: "Natalia", age: 22, place: "Vadalia NYC", zodiac: "Cancer", photos: ["User1", "User2"]),
@@ -19,5 +23,11 @@ class HomeViewModel: ObservableObject {
             UserCard(name: "Angelina", age: 18, place: "Empier State NYC", zodiac: "Scorpio", photos: ["User5", "User6"]),
             UserCard(name: "Brittany", age: 25, place: "Time Square NYC", zodiac: "Aries", photos: ["User6", "User1"])
         ]
+    }
+    
+    func nextUserCard() {
+        if let _ = displayingCard.first {
+            displayingCard.removeFirst()
+        }
     }
 }

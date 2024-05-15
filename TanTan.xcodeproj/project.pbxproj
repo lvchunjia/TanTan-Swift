@@ -17,6 +17,7 @@
 		A6763B692BF33F7F00E1669E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B682BF33F7F00E1669E /* HomeViewModel.swift */; };
 		A6763B6B2BF340C500E1669E /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B6A2BF340C500E1669E /* UserCardView.swift */; };
 		A6763B872BF4560F00E1669E /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B862BF4560F00E1669E /* RoundButton.swift */; };
+		A6763B892BF45A9700E1669E /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B882BF45A9700E1669E /* CardContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A6763B682BF33F7F00E1669E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A6763B6A2BF340C500E1669E /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
 		A6763B862BF4560F00E1669E /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		A6763B882BF45A9700E1669E /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				A6763B682BF33F7F00E1669E /* HomeViewModel.swift */,
 				A6763B6A2BF340C500E1669E /* UserCardView.swift */,
 				A6763B862BF4560F00E1669E /* RoundButton.swift */,
+				A6763B882BF45A9700E1669E /* CardContainerView.swift */,
 			);
 			path = TanTan;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				A6763B872BF4560F00E1669E /* RoundButton.swift in Sources */,
 				A6763B612BEF5BDA00E1669E /* AppState.swift in Sources */,
 				A6763B692BF33F7F00E1669E /* HomeViewModel.swift in Sources */,
+				A6763B892BF45A9700E1669E /* CardContainerView.swift in Sources */,
 				A6763B672BF33F4A00E1669E /* HomeScreen.swift in Sources */,
 				A6763B552BEF4DB300E1669E /* ContentView.swift in Sources */,
 				A6763B652BF33EEB00E1669E /* UserCard.swift in Sources */,
