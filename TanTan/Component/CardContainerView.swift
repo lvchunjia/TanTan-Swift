@@ -19,8 +19,18 @@ struct CardContainerView: View {
             if viewModel.hasMoreCard {
                 HStack {
                     ForEach(ButtonType.allCases) { type in
-                        RoundButton(type: type)
-                            .frame(height: 45)
+                        RoundButton(type: type, action: {
+                            switch type {
+                            case .back:
+                                debugPrint("Roll Back")
+                            case .no:
+                                viewModel.nextUserCard()
+                            case .heart:
+                                viewModel.nextUserCard()
+                            case .star:
+                                debugPrint("Super Like")
+                            }
+                        }).frame(height: 45)
                     }
                 }.padding(.bottom, 15)
             }

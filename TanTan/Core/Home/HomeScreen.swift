@@ -11,7 +11,12 @@ struct HomeScreen: View {
     @StateObject var viewModel: HomeViewModel = HomeViewModel()
     
     var body: some View {
-        CardContainerView(viewModel: viewModel)
+        if viewModel.hasMoreCard {
+            CardContainerView(viewModel: viewModel)
+        } else {
+            NoResultView()
+        }
+        
     }
 }
 

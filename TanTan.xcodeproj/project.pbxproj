@@ -18,6 +18,7 @@
 		A6763B6B2BF340C500E1669E /* UserCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B6A2BF340C500E1669E /* UserCardView.swift */; };
 		A6763B872BF4560F00E1669E /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B862BF4560F00E1669E /* RoundButton.swift */; };
 		A6763B892BF45A9700E1669E /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B882BF45A9700E1669E /* CardContainerView.swift */; };
+		A6763B8B2BF4602900E1669E /* NoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6763B8A2BF4602900E1669E /* NoResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		A6763B6A2BF340C500E1669E /* UserCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardView.swift; sourceTree = "<group>"; };
 		A6763B862BF4560F00E1669E /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		A6763B882BF45A9700E1669E /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
+		A6763B8A2BF4602900E1669E /* NoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,17 +67,16 @@
 		A6763B512BEF4DB300E1669E /* TanTan */ = {
 			isa = PBXGroup;
 			children = (
+				A6763B912BF4818500E1669E /* ViewModel */,
+				A6763B902BF4816F00E1669E /* Model */,
+				A6763B8F2BF4812F00E1669E /* Component */,
+				A6763B8E2BF4811D00E1669E /* Extension */,
+				A6763B8C2BF480E200E1669E /* Core */,
 				A6763B522BEF4DB300E1669E /* TanTanApp.swift */,
 				A6763B542BEF4DB300E1669E /* ContentView.swift */,
 				A6763B602BEF5BDA00E1669E /* AppState.swift */,
 				A6763B562BEF4DB400E1669E /* Assets.xcassets */,
 				A6763B582BEF4DB400E1669E /* Preview Content */,
-				A6763B642BF33EEB00E1669E /* UserCard.swift */,
-				A6763B662BF33F4A00E1669E /* HomeScreen.swift */,
-				A6763B682BF33F7F00E1669E /* HomeViewModel.swift */,
-				A6763B6A2BF340C500E1669E /* UserCardView.swift */,
-				A6763B862BF4560F00E1669E /* RoundButton.swift */,
-				A6763B882BF45A9700E1669E /* CardContainerView.swift */,
 			);
 			path = TanTan;
 			sourceTree = "<group>";
@@ -86,6 +87,56 @@
 				A6763B592BEF4DB400E1669E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A6763B8C2BF480E200E1669E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A6763B8D2BF480F300E1669E /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A6763B8D2BF480F300E1669E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A6763B662BF33F4A00E1669E /* HomeScreen.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A6763B8E2BF4811D00E1669E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A6763B8F2BF4812F00E1669E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				A6763B862BF4560F00E1669E /* RoundButton.swift */,
+				A6763B6A2BF340C500E1669E /* UserCardView.swift */,
+				A6763B8A2BF4602900E1669E /* NoResultView.swift */,
+				A6763B882BF45A9700E1669E /* CardContainerView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		A6763B902BF4816F00E1669E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6763B642BF33EEB00E1669E /* UserCard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6763B912BF4818500E1669E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A6763B682BF33F7F00E1669E /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +213,7 @@
 				A6763B612BEF5BDA00E1669E /* AppState.swift in Sources */,
 				A6763B692BF33F7F00E1669E /* HomeViewModel.swift in Sources */,
 				A6763B892BF45A9700E1669E /* CardContainerView.swift in Sources */,
+				A6763B8B2BF4602900E1669E /* NoResultView.swift in Sources */,
 				A6763B672BF33F4A00E1669E /* HomeScreen.swift in Sources */,
 				A6763B552BEF4DB300E1669E /* ContentView.swift in Sources */,
 				A6763B652BF33EEB00E1669E /* UserCard.swift in Sources */,
