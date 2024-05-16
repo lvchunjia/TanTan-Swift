@@ -42,7 +42,7 @@ struct CardContainerView: View {
                         }
                     }.padding(.bottom, 15)
                 }
-            }.padding(.horizontal, 20).padding(.vertical, 50)
+            }.padding(.horizontal, 20).padding(.vertical, 20)
         }
     }
 }

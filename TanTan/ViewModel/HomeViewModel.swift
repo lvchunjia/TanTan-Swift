@@ -8,6 +8,7 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
+    @Published var selectedTitle: HomeScreen.HomeTitle = .TANTAN
     @Published var displayingCard: [UserCard]
     
     var hasMoreCard: Bool {
