@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @EnvironmentObject var appState: AppState
     @StateObject var viewModel: HomeViewModel = HomeViewModel()
     
     var body: some View {
         if viewModel.hasMoreCard {
-            CardContainerView(viewModel: viewModel)
+            ZStack {
+                ForEach(viewModel.displayingCard.reversed()) { card in
+                    CardContainerView(viewModel: viewModel, card: card).environmentObject(appState)
+                }
+            }
         } else {
             NoResultView()
         }
@@ -21,5 +26,5 @@ struct HomeScreen: View {
 }
 
 #Preview {
-    HomeScreen()
+    HomeScreen().environmentObject(AppState())
 }

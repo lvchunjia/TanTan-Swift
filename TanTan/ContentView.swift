@@ -14,7 +14,7 @@ struct ContentView: View {
         VStack {
             switch appState.selectedTab {
             case .home:
-                HomeScreen()
+                HomeScreen().environmentObject(appState)
             case .live:
                 Text("Live")
             case .message:
