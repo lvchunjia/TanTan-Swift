@@ -21,7 +21,6 @@ struct HomeScreen: View {
         } else {
             NoResultView()
         }
-        
     }
 }
 

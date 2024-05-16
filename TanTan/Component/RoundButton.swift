@@ -28,31 +28,37 @@ struct RoundButton: View {
                 .aspectRatio(contentMode: .fit)
                 .padding(12)
                 .modifier(ColorButton(type: type))
-                .background(.black.opacity(0.4))
         }
         .buttonStyle(PressScaleButton())
     }
 }
 
 struct ColorButton: ViewModifier {
+    @EnvironmentObject var appState: AppState
     var type: ButtonType
     
     func body(content: Content) -> some View {
+        let isFullScreen = appState.isFullScreen
+        
         switch type {
         case .back:
             content
                 .foregroundColor(.yellow)
+                .background(.black.opacity(0.4))
         case .no:
             content
                 .foregroundColor(.white)
                 .padding(.horizontal, 30)
+                .background(isFullScreen ? .yellow : .black.opacity(0.4))
         case .heart:
             content
-                .foregroundColor(.pink)
+                .foregroundColor(isFullScreen ? .white : .pink)
                 .padding(.horizontal, 30)
+                .background(isFullScreen ? .pink : .black.opacity(0.4))
         case .star:
             content
-                .foregroundColor(.blue)
+                .foregroundColor(isFullScreen ? .white : .blue)
+                .background(isFullScreen ? .blue : .black.opacity(0.4))
         }
     }
 }
@@ -69,7 +75,7 @@ struct PressScaleButton: ButtonStyle {
     VStack {
         ForEach(ButtonType.allCases) { type in
             RoundButton(type: type).frame(height: 40)
-        }
+        }.environmentObject(AppState(isFullScreen: true))
     }
    
 }
