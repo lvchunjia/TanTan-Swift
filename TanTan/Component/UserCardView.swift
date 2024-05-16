@@ -135,7 +135,7 @@ struct UserCardView: View {
             }
             Spacer()
             Button {
-                appState.isFullScreen = true
+                appState.isFullScreen = true                
             } label: {
                 Image(systemName: "info.circle.fill")
                     .font(.system(size: 30))

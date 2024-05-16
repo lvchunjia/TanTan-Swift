@@ -10,16 +10,19 @@ import SwiftUI
 struct CardContainerView: View {
     @EnvironmentObject var appState: AppState
     @ObservedObject var viewModel: HomeViewModel
+    @Namespace var namespace
     var card: UserCard
     
     var body: some View {
         if appState.isFullScreen {
-            CardDetailView(card: card)
+            CardDetailView(namespace: namespace,card: card)
                 .background(.white)
                 .environmentObject(appState)
         } else {
             ZStack(alignment: .bottom) {
-                UserCardView(userCard: card, swipeAction: viewModel.nextUserCard).environmentObject(appState)
+                UserCardView(userCard: card, swipeAction: viewModel.nextUserCard)
+                    .matchedGeometryEffect(id: card.id, in: namespace)
+                    .environmentObject(appState)
                 
                 if viewModel.hasMoreCard {
                     HStack {

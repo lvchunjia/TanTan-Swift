@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardDetailView: View {
     @EnvironmentObject var appState: AppState
+    var namespace: Namespace.ID
     var card: UserCard
     
     var body: some View {
@@ -18,6 +19,9 @@ struct CardDetailView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
                     UserCardView(userCard: card)
+                        .animation(.easeOut(duration: 0.1))
+                        .matchedGeometryEffect(id: card.id, in: namespace)
+                        .environmentObject(appState)
                         .frame(width: screen.width, height: screen.height * 0.7)
                     
                     HStack {
@@ -33,7 +37,9 @@ struct CardDetailView: View {
                         }.padding([.top, .horizontal], 20)
                         
                         Button {
-                            appState.isFullScreen = false
+                            withAnimation(.easeOut(duration: 0.1)) {
+                                appState.isFullScreen = false
+                            }
                         } label: {
                             Image(systemName: "arrow.up.circle.fill")
                                 .font(.system(size: 40))
@@ -91,18 +97,29 @@ struct CardDetailView: View {
         let item = ["What do you think about \(card.name)?"]
         let av = UIActivityViewController(activityItems: item, applicationActivities: nil)
         
-//        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true)
-
+        // UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true)
         // 获取当前活动的窗口场景
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
             window.rootViewController?.present(av, animated: true)
         }
-
     }
 }
 
-#Preview {
-    CardDetailView(card: UserCard(name: "Natalia", age: 22, place: "Vadalia NYC", zodiac: "Cancer", photos: ["User1", "User2"]))
-        .environmentObject(AppState(isFullScreen: true))
+//#Preview {
+//    @Namespace var namespace
+//    CardDetailView(
+//        namespace: namespace,
+//        card: UserCard(name: "Natalia", age: 22, place: "Vadalia NYC", zodiac: "Cancer", photos: ["User1", "User2"])
+//    ).environmentObject(AppState(isFullScreen: true))
+//}
+
+struct CardDetailView_Previews: PreviewProvider {
+    @Namespace static var namespace
+    static var previews: some View {
+        CardDetailView(
+            namespace: namespace,
+            card: UserCard(name: "Natalia", age: 22, place: "Vadalia NYC", zodiac: "Cancer", photos: ["User1", "User2"])
+        ).environmentObject(AppState(isFullScreen: true))
+    }
 }

@@ -13,8 +13,9 @@ struct HomeScreen: View {
     
     var body: some View {
         if viewModel.hasMoreCard {
+            let cards = viewModel.displayingCard.reversed()
             ZStack {
-                ForEach(viewModel.displayingCard.reversed()) { card in
+                ForEach(cards) { card in
                     CardContainerView(viewModel: viewModel, card: card).environmentObject(appState)
                 }
             }
